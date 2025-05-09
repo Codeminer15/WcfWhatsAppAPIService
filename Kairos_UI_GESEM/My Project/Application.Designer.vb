@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Kairos_UI_GESEM.Form1
+            Me.MainForm = Global.Kairos_UI_GESEM.ButtonsForm
         End Sub
     End Class
 End Namespace

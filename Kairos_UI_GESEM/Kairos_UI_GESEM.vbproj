@@ -70,11 +70,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Design\UIHelpers.vb" />
+    <Compile Include="ButtonsForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="ButtonsForm.Designer.vb">
+      <DependentUpon>ButtonsForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -92,13 +93,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Utilities\DataBaseChecker.vb" />
+    <Compile Include="Utilities\DBConnection.vb" />
+    <Compile Include="Utilities\NetworkChecker.vb" />
+    <Compile Include="WABAConfig.Designer.vb">
+      <DependentUpon>WABAConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WABAConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhatsAppForm.Designer.vb">
+      <DependentUpon>WhatsAppForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WhatsAppForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ButtonsForm.resx">
+      <DependentUpon>ButtonsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WABAConfig.resx">
+      <DependentUpon>WABAConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhatsAppForm.resx">
+      <DependentUpon>WhatsAppForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +136,23 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\cancelar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pictures\engranaje3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pictures\enviar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pictures\guardar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pictures\logo_whatsapp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
