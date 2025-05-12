@@ -22,7 +22,6 @@ Partial Class WABAConfig
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextUrl = New System.Windows.Forms.TextBox()
@@ -36,19 +35,10 @@ Partial Class WABAConfig
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(84, 336)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(104, 13)
-        Me.Label4.TabIndex = 31
-        Me.Label4.Text = "Estado de la Red: ---"
-        '
         'BtnCancel
         '
         Me.BtnCancel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnCancel.Location = New System.Drawing.Point(315, 325)
+        Me.BtnCancel.Location = New System.Drawing.Point(314, 267)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(109, 40)
         Me.BtnCancel.TabIndex = 30
@@ -59,7 +49,7 @@ Partial Class WABAConfig
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(88, 182)
+        Me.Label5.Location = New System.Drawing.Point(88, 169)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 21)
         Me.Label5.TabIndex = 29
@@ -67,7 +57,7 @@ Partial Class WABAConfig
         '
         'TextUrl
         '
-        Me.TextUrl.Location = New System.Drawing.Point(181, 182)
+        Me.TextUrl.Location = New System.Drawing.Point(181, 169)
         Me.TextUrl.Name = "TextUrl"
         Me.TextUrl.Size = New System.Drawing.Size(228, 20)
         Me.TextUrl.TabIndex = 28
@@ -76,7 +66,7 @@ Partial Class WABAConfig
         'LblMsg
         '
         Me.LblMsg.AutoSize = True
-        Me.LblMsg.Location = New System.Drawing.Point(133, 305)
+        Me.LblMsg.Location = New System.Drawing.Point(132, 247)
         Me.LblMsg.Name = "LblMsg"
         Me.LblMsg.Size = New System.Drawing.Size(55, 13)
         Me.LblMsg.TabIndex = 27
@@ -85,7 +75,7 @@ Partial Class WABAConfig
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSave.Location = New System.Drawing.Point(467, 325)
+        Me.btnSave.Location = New System.Drawing.Point(466, 267)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(109, 40)
         Me.btnSave.TabIndex = 26
@@ -95,14 +85,14 @@ Partial Class WABAConfig
         'cmbVersion
         '
         Me.cmbVersion.FormattingEnabled = True
-        Me.cmbVersion.Location = New System.Drawing.Point(181, 217)
+        Me.cmbVersion.Location = New System.Drawing.Point(181, 204)
         Me.cmbVersion.Name = "cmbVersion"
         Me.cmbVersion.Size = New System.Drawing.Size(121, 21)
         Me.cmbVersion.TabIndex = 25
         '
         'txtPhoneNumberId
         '
-        Me.txtPhoneNumberId.Location = New System.Drawing.Point(181, 145)
+        Me.txtPhoneNumberId.Location = New System.Drawing.Point(181, 132)
         Me.txtPhoneNumberId.Name = "txtPhoneNumberId"
         Me.txtPhoneNumberId.Size = New System.Drawing.Size(317, 20)
         Me.txtPhoneNumberId.TabIndex = 24
@@ -110,7 +100,7 @@ Partial Class WABAConfig
         '
         'txtUserAccessToken
         '
-        Me.txtUserAccessToken.Location = New System.Drawing.Point(181, 45)
+        Me.txtUserAccessToken.Location = New System.Drawing.Point(181, 32)
         Me.txtUserAccessToken.Multiline = True
         Me.txtUserAccessToken.Name = "txtUserAccessToken"
         Me.txtUserAccessToken.Size = New System.Drawing.Size(317, 60)
@@ -120,7 +110,7 @@ Partial Class WABAConfig
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(104, 217)
+        Me.Label3.Location = New System.Drawing.Point(104, 204)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 21)
         Me.Label3.TabIndex = 22
@@ -130,7 +120,7 @@ Partial Class WABAConfig
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(54, 123)
+        Me.Label2.Location = New System.Drawing.Point(54, 110)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(121, 42)
         Me.Label2.TabIndex = 21
@@ -140,7 +130,7 @@ Partial Class WABAConfig
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(35, 45)
+        Me.Label1.Location = New System.Drawing.Point(35, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 21)
         Me.Label1.TabIndex = 20
@@ -151,7 +141,6 @@ Partial Class WABAConfig
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(610, 392)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextUrl)
@@ -169,8 +158,6 @@ Partial Class WABAConfig
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label4 As Label
     Friend WithEvents BtnCancel As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents TextUrl As TextBox

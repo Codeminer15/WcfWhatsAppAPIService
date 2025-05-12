@@ -112,7 +112,7 @@ Public Class UIHelpers
         StyleButton(btn, SecondaryColor)
     End Sub
 
-    Private Shared Sub StyleButton(btn As Button, backColor As Color)
+    Public Shared Sub StyleButton(btn As Button, backColor As Color)
         btn.FlatStyle = FlatStyle.Flat
         btn.FlatAppearance.BorderSize = 0
         btn.BackColor = backColor

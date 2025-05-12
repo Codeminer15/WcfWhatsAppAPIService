@@ -93,7 +93,7 @@ Partial Class WhatsAppForm
         'BtnCancel
         '
         Me.BtnCancel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnCancel.Location = New System.Drawing.Point(500, 354)
+        Me.BtnCancel.Location = New System.Drawing.Point(478, 302)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(109, 40)
         Me.BtnCancel.TabIndex = 38
@@ -102,7 +102,7 @@ Partial Class WhatsAppForm
         '
         'btnViewLogs
         '
-        Me.btnViewLogs.Location = New System.Drawing.Point(387, 354)
+        Me.btnViewLogs.Location = New System.Drawing.Point(365, 302)
         Me.btnViewLogs.Name = "btnViewLogs"
         Me.btnViewLogs.Size = New System.Drawing.Size(75, 40)
         Me.btnViewLogs.TabIndex = 37
@@ -111,7 +111,7 @@ Partial Class WhatsAppForm
         '
         'btnTestConnection
         '
-        Me.btnTestConnection.Location = New System.Drawing.Point(112, 293)
+        Me.btnTestConnection.Location = New System.Drawing.Point(53, 304)
         Me.btnTestConnection.Name = "btnTestConnection"
         Me.btnTestConnection.Size = New System.Drawing.Size(75, 40)
         Me.btnTestConnection.TabIndex = 36
@@ -121,7 +121,7 @@ Partial Class WhatsAppForm
         'lblServiceStatus
         '
         Me.lblServiceStatus.AutoSize = True
-        Me.lblServiceStatus.Location = New System.Drawing.Point(198, 303)
+        Me.lblServiceStatus.Location = New System.Drawing.Point(149, 316)
         Me.lblServiceStatus.Name = "lblServiceStatus"
         Me.lblServiceStatus.Size = New System.Drawing.Size(46, 13)
         Me.lblServiceStatus.TabIndex = 35
@@ -242,7 +242,7 @@ Partial Class WhatsAppForm
         'btnSendWhatsApp
         '
         Me.btnSendWhatsApp.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSendWhatsApp.Location = New System.Drawing.Point(631, 354)
+        Me.btnSendWhatsApp.Location = New System.Drawing.Point(609, 302)
         Me.btnSendWhatsApp.Name = "btnSendWhatsApp"
         Me.btnSendWhatsApp.Size = New System.Drawing.Size(109, 40)
         Me.btnSendWhatsApp.TabIndex = 22

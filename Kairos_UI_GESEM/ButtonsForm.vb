@@ -99,8 +99,8 @@ Public Class ButtonsForm
                                                   Dim pdfExiste As Boolean = IO.File.Exists(result("RutaPDF"))
                                                   Dim estado As String = If(xmlExiste AndAlso pdfExiste, "Estado: Archivos disponibles", "Estado: Archivos no encontrados")
 
-                                                  'Dim form As New WhatsAppForm(result("Nombre"), result("Telefono"), result("RutaXML"), result("RutaPDF"), estado)
-                                                  'form.Show()
+                                                  Dim form As New WhatsAppForm(result("Nombre"), result("Telefono"), result("RutaXML"), result("RutaPDF"), estado)
+                                                  form.Show()
                                               End Sub
 
         worker.RunWorkerAsync()
