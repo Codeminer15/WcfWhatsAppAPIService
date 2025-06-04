@@ -102,6 +102,9 @@
     </Compile>
     <Compile Include="Utilities\DataBaseChecker.vb" />
     <Compile Include="Utilities\DBConnection.vb" />
+    <Compile Include="Utilities\ErrorHandler.vb" />
+    <Compile Include="Utilities\GitHandler.vb" />
+    <Compile Include="Utilities\MessageLogger.vb" />
     <Compile Include="Utilities\NetworkChecker.vb" />
     <Compile Include="WABAConfig.Designer.vb">
       <DependentUpon>WABAConfig.vb</DependentUpon>

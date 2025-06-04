@@ -187,6 +187,8 @@ Public Class WABAConfig
     Private Sub LoadComboBoxData()
         cmbVersion.Items.Clear()
         ' Agregar versiones disponibles en el ComboBox
+        cmbVersion.Items.Add("v24.0")
+        cmbVersion.Items.Add("v23.0")
         cmbVersion.Items.Add("v22.0")
         cmbVersion.Items.Add("v21.0")
         cmbVersion.Items.Add("v20.0")
@@ -195,7 +197,7 @@ Public Class WABAConfig
 
         ' Seleccionar por defecto la primera versión
         If cmbVersion.Items.Count > 0 Then
-            cmbVersion.SelectedIndex = 0
+            cmbVersion.SelectedIndex = 1
         End If
     End Sub
 

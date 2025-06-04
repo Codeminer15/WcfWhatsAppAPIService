@@ -117,7 +117,7 @@ Public Class UIHelpers
         btn.FlatAppearance.BorderSize = 0
         btn.BackColor = backColor
         btn.ForeColor = Color.White
-        btn.Font = New Font("Segoe UI", 9, FontStyle.Bold)
+        btn.Font = New Font("Segoe UI", 10, FontStyle.Bold)
         btn.Cursor = Cursors.Hand
         btn.FlatAppearance.MouseOverBackColor = ControlPaint.Light(backColor, 0.2)
         btn.FlatAppearance.MouseDownBackColor = ControlPaint.Dark(backColor, 0.2)
@@ -134,7 +134,7 @@ Public Class UIHelpers
         btn.TextAlign = ContentAlignment.MiddleRight
         btn.ImageAlign = ContentAlignment.MiddleLeft
         btn.TextImageRelation = TextImageRelation.ImageBeforeText
-        btn.Padding = New Padding(15, 0, 15, 0)
+        btn.Padding = New Padding(15, 0, 12, 0)
 
         Try
             Dim imagePath As String = Path.Combine(Application.StartupPath, "Pictures")

@@ -56,6 +56,8 @@ Public Class WhatsAppForm
         BtnCancel.TextAlign = ContentAlignment.MiddleCenter
         BtnCancel.ImageAlign = ContentAlignment.MiddleLeft
 
+        btnTestConnection.Font = New Font("Segoe UI", 8, FontStyle.Bold)
+        btnViewLogs.Font = New Font("Segoe UI", 8, FontStyle.Bold)
         btnSendWhatsApp.Padding = New Padding(10, 0, 10, 0)
         BtnCancel.Padding = New Padding(10, 0, 10, 0)
     End Sub
@@ -92,9 +94,9 @@ Public Class WhatsAppForm
         Dim nombreXML As String = Path.GetFileName(rutaXML)
         Dim nombrePDF As String = Path.GetFileName(rutaPDF)
 
-        If Not VerificarArchivosEnGitHub(nombreXML, nombrePDF) Then
-            If Not SubirArchivosAGitHub(rutaXML, rutaPDF) Then
-                MessageBox.Show("No se pudieron subir los archivos a GitHub", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Not GitHandler.VerificarArchivosEnGitHub(nombreXML, nombrePDF, rutaLocalGit) Then
+            If Not GitHandler.SubirArchivosAGitHub(rutaXML, rutaPDF, rutaLocalGit) Then
+
                 CheckBoxPdf.Checked = False
                 CheckBoxXml.Checked = False
                 Return
@@ -114,48 +116,6 @@ Public Class WhatsAppForm
         lblPGH.Text = urlGitHub & nombrePDF
 
         EnviarMensajeWhatsApp(txtPhoneNumber.Text.Trim(), txtName.Text.Trim(), nombrePDF, nombreXML)
-    End Sub
-
-    Private Function VerificarArchivosEnGitHub(nombreXML As String, nombrePDF As String) As Boolean
-        Try
-            Dim rutaXML = Path.Combine(rutaLocalGit, nombreXML)
-            Dim rutaPDF = Path.Combine(rutaLocalGit, nombrePDF)
-            Return File.Exists(rutaXML) AndAlso File.Exists(rutaPDF)
-        Catch
-            Return False
-        End Try
-    End Function
-
-    Private Function SubirArchivosAGitHub(rutaXML As String, rutaPDF As String) As Boolean
-        Try
-            Dim nombreXML = Path.GetFileName(rutaXML)
-            Dim nombrePDF = Path.GetFileName(rutaPDF)
-
-            File.Copy(rutaXML, Path.Combine(rutaLocalGit, nombreXML), True)
-            File.Copy(rutaPDF, Path.Combine(rutaLocalGit, nombrePDF), True)
-
-            EjecutarComandoGit("git pull --rebase")
-            EjecutarComandoGit("git add .")
-            EjecutarComandoGit($"git commit -m ""Subida automática de factura {nombrePDF}""")
-            EjecutarComandoGit("git push origin main")
-
-            Return True
-        Catch ex As Exception
-            MessageBox.Show($"Error al subir archivos a GitHub: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End Try
-    End Function
-
-    Private Sub EjecutarComandoGit(comando As String)
-        Dim proceso As New Process()
-        proceso.StartInfo.FileName = "cmd.exe"
-        proceso.StartInfo.WorkingDirectory = rutaLocalGit
-        proceso.StartInfo.Arguments = "/c " & comando
-        proceso.StartInfo.RedirectStandardOutput = True
-        proceso.StartInfo.UseShellExecute = False
-        proceso.StartInfo.CreateNoWindow = True
-        proceso.Start()
-        proceso.WaitForExit()
     End Sub
 
     Private Sub EnviarMensajeWhatsApp(phoneNumber As String, customerName As String, fileNamePdf As String, fileNameXml As String)
@@ -184,23 +144,16 @@ Public Class WhatsAppForm
             Using response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
                 Using reader As New StreamReader(response.GetResponseStream())
                     Dim responseText As String = reader.ReadToEnd()
-                    MessageBox.Show("Mensaje enviado: " & responseText, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    'Guardar el log de envío
+                    MessageLogger.GuardarLogDeEnvio(responseText)
+
+                    MessageBox.Show("Mensaje enviado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End Using
             End Using
 
-        Catch ex As WebException
-            Dim errorMsg As String = "Error al enviar mensaje: "
-            If ex.Response IsNot Nothing Then
-                Using reader As New StreamReader(ex.Response.GetResponseStream())
-                    errorMsg &= reader.ReadToEnd()
-                End Using
-            Else
-                errorMsg &= ex.Message
-            End If
-            MessageBox.Show(errorMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
         Catch ex As Exception
-            MessageBox.Show("Error general: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrorHandler.Manejar(ex)
         End Try
     End Sub
 
@@ -253,6 +206,7 @@ Public Class WhatsAppForm
         End Try
     End Function
 
+    'Solo aplicar para casos de prueba
     Private Sub btnViewLogs_Click(sender As Object, e As EventArgs) Handles btnViewLogs.Click
         Try
             If File.Exists(logPath) Then
