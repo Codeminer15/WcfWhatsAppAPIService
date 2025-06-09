@@ -159,8 +159,8 @@ Public Class WhatsAppForm
 
     Private Sub btnTestConnection_Click(sender As Object, e As EventArgs) Handles btnTestConnection.Click
         Dim endpoints As New List(Of String) From {
-            "http://localhost/API_WA/WhatsAppAPIs.svc",
-            "https://localhost:50721/API_WA/WhatsAppAPIs.svc"
+            "http://192.168.1.8/API_WA/WhatsAppAPIs.svc",
+            "https://192.168.1.8:80/API_WA/WhatsAppAPIs.svc"
         }
 
         lblServiceStatus.Text = "Probando conexión..."
