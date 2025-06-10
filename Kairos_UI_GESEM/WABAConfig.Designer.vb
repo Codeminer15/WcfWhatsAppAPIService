@@ -25,7 +25,6 @@ Partial Class WABAConfig
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextUrl = New System.Windows.Forms.TextBox()
-        Me.LblMsg = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.cmbVersion = New System.Windows.Forms.ComboBox()
         Me.txtPhoneNumberId = New System.Windows.Forms.TextBox()
@@ -62,15 +61,6 @@ Partial Class WABAConfig
         Me.TextUrl.Size = New System.Drawing.Size(228, 20)
         Me.TextUrl.TabIndex = 28
         Me.TextUrl.Text = "https://graph.facebook.com"
-        '
-        'LblMsg
-        '
-        Me.LblMsg.AutoSize = True
-        Me.LblMsg.Location = New System.Drawing.Point(132, 247)
-        Me.LblMsg.Name = "LblMsg"
-        Me.LblMsg.Size = New System.Drawing.Size(55, 13)
-        Me.LblMsg.TabIndex = 27
-        Me.LblMsg.Text = "Estado: ---"
         '
         'btnSave
         '
@@ -144,7 +134,6 @@ Partial Class WABAConfig
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextUrl)
-        Me.Controls.Add(Me.LblMsg)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbVersion)
         Me.Controls.Add(Me.txtPhoneNumberId)
@@ -161,7 +150,6 @@ Partial Class WABAConfig
     Friend WithEvents BtnCancel As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents TextUrl As TextBox
-    Friend WithEvents LblMsg As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents cmbVersion As ComboBox
     Friend WithEvents txtPhoneNumberId As TextBox

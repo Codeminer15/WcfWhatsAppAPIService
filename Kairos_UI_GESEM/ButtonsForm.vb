@@ -100,6 +100,16 @@ Public Class ButtonsForm
                                                   Dim estado As String = If(xmlExiste AndAlso pdfExiste, "Estado: Archivos disponibles", "Estado: Archivos no encontrados")
 
                                                   Dim form As New WhatsAppForm(result("Nombre"), result("Telefono"), result("RutaXML"), result("RutaPDF"), estado)
+
+                                                  ' Desactivar ventana de botones mientras se usa WhatsAppForm
+                                                  Me.Enabled = False
+
+                                                  ' Cuando se cierra WhatsAppForm, reactivar la ventana de botones
+                                                  AddHandler form.FormClosed, Sub()
+                                                                                  Me.Enabled = True
+                                                                                  Me.BringToFront()
+                                                                              End Sub
+
                                                   form.Show()
                                               End Sub
 
@@ -130,6 +140,12 @@ Public Class ButtonsForm
     Private Sub BtnSetting_Click(sender As Object, e As EventArgs) Handles BtnSetting.Click
         Dim configForm As New WABAConfig()
         configForm.StartPosition = FormStartPosition.CenterParent
+        Me.Enabled = False ' Desactiva la ventana principal
+
+        AddHandler configForm.FormClosed, Sub()
+                                              Me.Enabled = True
+                                              Me.BringToFront()
+                                          End Sub
         configForm.Show()
     End Sub
 

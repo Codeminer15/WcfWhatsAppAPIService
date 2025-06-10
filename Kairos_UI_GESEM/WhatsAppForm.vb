@@ -13,6 +13,7 @@ Public Class WhatsAppForm
     Private ReadOnly urlGitHub As String = "https://github.com/codeminer15/Facturas_Prueba/"
     Private WithEvents _networkChecker As New NetworkChecker()
 
+
     Public Sub New(nombre As String, telefono As String, xml As String, pdf As String, state As String)
         Me.FormBorderStyle = FormBorderStyle.None
         Me.ControlBox = False
@@ -28,6 +29,7 @@ Public Class WhatsAppForm
     End Sub
 
     Private Sub WhatsAppForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         UIHelpers.ApplyFormLayout(Me, "Envío de Factura por WhatsApp")
         ApplyStyles()
         _networkChecker.StartChecking()

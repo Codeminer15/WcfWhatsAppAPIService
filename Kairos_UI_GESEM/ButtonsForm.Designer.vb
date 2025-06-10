@@ -50,7 +50,7 @@ Partial Class ButtonsForm
         Me.BtnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSetting.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnSetting.Location = New System.Drawing.Point(123, 72)
+        Me.BtnSetting.Location = New System.Drawing.Point(123, 121)
         Me.BtnSetting.Name = "BtnSetting"
         Me.BtnSetting.Size = New System.Drawing.Size(115, 47)
         Me.BtnSetting.TabIndex = 5
@@ -63,7 +63,7 @@ Partial Class ButtonsForm
         Me.BtnSendMessageWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSendMessageWindow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSendMessageWindow.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnSendMessageWindow.Location = New System.Drawing.Point(123, 125)
+        Me.BtnSendMessageWindow.Location = New System.Drawing.Point(123, 68)
         Me.BtnSendMessageWindow.Name = "BtnSendMessageWindow"
         Me.BtnSendMessageWindow.Size = New System.Drawing.Size(115, 47)
         Me.BtnSendMessageWindow.TabIndex = 4

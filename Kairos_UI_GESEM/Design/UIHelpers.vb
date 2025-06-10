@@ -49,6 +49,25 @@ Public Class UIHelpers
             .Padding = New Padding(5)
         }
 
+        ' === ÍCONO ===
+        Dim iconBox As New PictureBox With {
+        .Size = New Size(28, 28),
+    .SizeMode = PictureBoxSizeMode.Zoom,
+    .Dock = DockStyle.Left,
+    .Margin = New Padding(5, 6, 5, 6),
+    .BackColor = Color.Transparent
+    }
+
+        Try
+            Dim imagePath As String = Path.Combine(Application.StartupPath, "Pictures\iconkairos.ico")
+            If File.Exists(imagePath) Then
+                iconBox.Image = Image.FromFile(imagePath)
+            End If
+        Catch ex As Exception
+            Debug.WriteLine("No se pudo cargar el ícono: " & ex.Message)
+        End Try
+
+        ' === TÍTULO ===
         Dim titleLabel As New Label With {
             .Text = titleText,
             .Font = New Font("Segoe UI", 12, FontStyle.Bold),
@@ -57,6 +76,7 @@ Public Class UIHelpers
             .TextAlign = ContentAlignment.MiddleCenter
         }
 
+        ' === BOTÓN CERRAR ===
         Dim closeButton As New Button With {
             .Text = "X",
             .Font = New Font("Segoe UI", 10, FontStyle.Bold),
@@ -76,6 +96,8 @@ Public Class UIHelpers
         AddHandler closeButton.MouseEnter, AddressOf CloseButton_MouseEnter
         AddHandler closeButton.MouseLeave, AddressOf CloseButton_MouseLeave
 
+        ' Muestra los elementos en el encabezado personalizado
+        titleBar.Controls.Add(iconBox)
         titleBar.Controls.Add(titleLabel)
         titleBar.Controls.Add(closeButton)
         form.Controls.Add(titleBar)

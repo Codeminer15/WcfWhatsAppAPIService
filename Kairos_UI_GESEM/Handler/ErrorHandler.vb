@@ -23,6 +23,8 @@ Public Class ErrorHandler
             mensajeUsuario = "Uno de los datos ingresados tiene un formato inválido."
         ElseIf TypeOf ex Is InvalidOperationException Then
             mensajeUsuario = "El sistema encontró un estado no válido en tiempo de ejecución."
+        ElseIf TypeOf ex Is TokenErrorHandler Then
+            mensajeUsuario = "El token de acceso de Meta no es válido o ha expirado. Por favor, verifica e ingresa un token correcto."
 
             ' Detección personalizada... errores relacionados con Git o ejecución de comandos
         ElseIf ex.Message.ToLower().Contains("git") OrElse ex.Message.ToLower().Contains("cmd.exe") Then

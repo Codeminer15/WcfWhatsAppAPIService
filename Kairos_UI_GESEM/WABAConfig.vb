@@ -38,6 +38,22 @@ Public Class WABAConfig
             Return
         End If
 
+        ' Validar el token antes de continuar
+        Try
+            ' Eliminamos los saltos de lineas y espacio generados por el multiline
+            Dim tokenLimpio As String = txtUserAccessToken.Text.Replace(vbCr, "").Replace(vbLf, "").Trim()
+        Catch ex As TokenErrorHandler
+            ErrorHandler.Manejar(ex)
+            btnSave.Enabled = True
+            Cursor.Current = Cursors.Default
+            Return
+        Catch ex As Exception
+            ErrorHandler.Manejar(ex)
+            btnSave.Enabled = True
+            Cursor.Current = Cursors.Default
+            Return
+        End Try
+
         ' Mostrar mensaje de progreso que se cerrará automáticamente
         Dim progressForm As New Form()
         progressForm.FormBorderStyle = FormBorderStyle.None
